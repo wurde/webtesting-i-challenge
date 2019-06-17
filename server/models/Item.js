@@ -11,8 +11,8 @@ const db_client = require('../db/client')
  */
 
 class Item {
-  static async all() {
-    return []
+  static all() {
+    return db_client('items')
   }
 }
 
