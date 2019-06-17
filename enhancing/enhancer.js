@@ -3,7 +3,11 @@
  */
 
 function succeed(item) {
-  return Object.assign({}, item, { enhancement: item.enhancement + 1 })
+  if (item.enhancement < 20) {
+    return Object.assign({}, item, { enhancement: item.enhancement + 1 })
+  } else {
+    return { ...item }
+  }
 }
 
 function fail(item) {

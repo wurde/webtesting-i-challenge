@@ -36,6 +36,18 @@ describe("enhancer.js", () => {
       new_item = enhancer.succeed(new_item)
       expect(new_item.enhancement).toBe(8)
     })
+
+    test("Returns max item enhancement of 20", () => {
+      const item = { name: 'Widget', durability: 35, enhancement: 20 }
+      let new_item = enhancer.succeed(item)
+      expect(new_item.enhancement).toBe(20)
+
+      new_item = enhancer.succeed(item)
+      expect(new_item.enhancement).toBe(20)
+
+      new_item = enhancer.succeed(item)
+      expect(new_item.enhancement).toBe(20)
+    })
   })
 
   describe("#fail", () => {
