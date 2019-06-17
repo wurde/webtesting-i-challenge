@@ -3,13 +3,13 @@
  */
 
 function succeed(item) {
-  if (item.enhancement < 20 && item.enhancement > 0) {
-    return Object.assign({}, item, { enhancement: item.enhancement + 1 })
-  } else if (item.enhancement < 0) {
-    return Object.assign({}, item, { enhancement: 0 })
-  } else {
-    return { ...item }
-  }
+  let new_item = Object.assign({}, item)
+
+  new_item.enhancement = (new_item.enhancement < 0) ? 0 : new_item.enhancement + 1
+  new_item.enhancement = (new_item.enhancement > 20) ? 20 : new_item.enhancement
+  new_item.durability = (new_item.durability < 0) ? 0 : new_item.durability
+
+  return new_item
 }
 
 function fail(item) {

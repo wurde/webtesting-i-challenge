@@ -56,6 +56,13 @@ describe("enhancer.js", () => {
       expect(new_item.enhancement).toBe(0)
     })
 
+    test("Returns min item durability of 0", () => {
+      const item = { name: 'Widget', durability: -5, enhancement: 15 }
+      let new_item = enhancer.succeed(item)
+
+      expect(new_item.durability).toBe(0)
+    })
+
     test("Returns item with unchanged durability", () => {
       const item = { name: 'Widget', durability: 35, enhancement: 20 }
       let new_item = enhancer.succeed(item)
