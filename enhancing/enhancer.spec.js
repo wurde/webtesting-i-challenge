@@ -12,7 +12,12 @@ const enhancer = require('./enhancer.js')
 
 describe("enhancer.js", () => {
   describe("#succeed", () => {
-    test.todo("TODO")
+    test("Returns item with enhancement incremented by 1", () => {
+      const item = { name: 'Widget', durability: 35, enhancement: 5 }
+      const new_item = enhancer.succeed(item)
+
+      expect(new_item.enhancement).toBe(6)
+    })
   })
 
   describe("#fail", () => {

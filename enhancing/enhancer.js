@@ -3,7 +3,7 @@
  */
 
 function succeed(item) {
-  return { ...item }
+  return Object.assign({}, item, { enhancement: item.enhancement + 1 })
 }
 
 function fail(item) {
