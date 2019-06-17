@@ -5,14 +5,19 @@
  */
 
 const db_client = require('../db/client')
+const enhancers = require('../helpers/enhancer')
 
 /**
  * Define model
  */
 
 class Item {
-  static all() {
-    return db_client('items')
+  static async all() {
+    let items = await db_client('items')
+
+    items = items.map(item => enhancers.get(item))
+
+    return items
   }
 }
 
