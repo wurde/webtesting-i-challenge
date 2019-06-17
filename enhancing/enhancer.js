@@ -11,7 +11,7 @@ function fail(item) {
 }
 
 function repair(item) {
-  return Object.assign(item, { durability: 100 })
+  return Object.assign({}, item, { durability: 100 })
 }
 
 function get(item) {

@@ -20,7 +20,14 @@ describe("enhancer.js", () => {
   })
 
   describe("#repair", () => {
-    test("Returns new item with durability set to 100", () => {
+    test("Returns new item", () => {
+      const item = { name: 'Widget', durability: 35, enhancement: 5 }
+      const new_item = enhancer.repair(item)
+
+      expect(item === new_item).toBeFalsy()
+    })
+
+    test("Returns item with durability set to 100", () => {
       const item = { name: 'Widget', durability: 35, enhancement: 5 }
       const new_item = enhancer.repair(item)
 
