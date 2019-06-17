@@ -27,7 +27,11 @@ function repair(item) {
 }
 
 function get(item) {
-  return Object.assign({}, item)
+  let new_item = Object.assign({}, item)
+
+  new_item.name = (new_item.enhancement > 0) ? new_item.name = `[+${new_item.enhancement}] ${new_item.name}` : new_item.name
+
+  return new_item
 }
 
 /**

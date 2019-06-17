@@ -115,6 +115,11 @@ describe("enhancer.js", () => {
   })
 
   describe("#get", () => {
-    test.todo("TODO")
+    test("Modifies name if enhancement greater than 0", () => {
+      const item = { name: 'Widget', durability: 35, enhancement: 5 }
+      const new_item = enhancer.get(item)
+
+      expect(new_item.name).toBe("[+5] Widget")
+    })
   })
 })
