@@ -2,9 +2,12 @@
   "name": "webtesting-i-challenge",
   "version": "0.1.0",
   "description": "Web Testing I Challenge",
-  "main": "index.js",
+  "main": "server/app.js",
   "private": true,
   "scripts": {
+    "start": "node server/app.js",
+    "start:watch": "nodemon server/app.js",
+    "start:all": "concurrently 'npm run start:watch' 'npm --prefix client start'",
     "test": "jest",
     "test:watch": "jest --watch"
   },
@@ -25,7 +28,9 @@
     "nodemon": "^1.19.1"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "helmet": "^3.18.0",
     "knex": "^0.17.6",
     "sqlite3": "^4.0.9"
   }
