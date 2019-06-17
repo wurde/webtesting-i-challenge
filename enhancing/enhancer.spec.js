@@ -27,9 +27,14 @@ describe("enhancer.js", () => {
   describe("#succeed", () => {
     test("Returns item with enhancement incremented by 1", () => {
       const item = { name: 'Widget', durability: 35, enhancement: 5 }
-      const new_item = enhancer.succeed(item)
-
+      let new_item = enhancer.succeed(item)
       expect(new_item.enhancement).toBe(6)
+
+      new_item = enhancer.succeed(new_item)
+      expect(new_item.enhancement).toBe(7)
+
+      new_item = enhancer.succeed(new_item)
+      expect(new_item.enhancement).toBe(8)
     })
   })
 

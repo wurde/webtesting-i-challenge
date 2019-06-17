@@ -7,7 +7,7 @@ function succeed(item) {
 }
 
 function fail(item) {
-  return { ...item }
+  return Object.assign({}, item)
 }
 
 function repair(item) {
@@ -15,7 +15,7 @@ function repair(item) {
 }
 
 function get(item) {
-  return { ...item }
+  return Object.assign({}, item)
 }
 
 /**
