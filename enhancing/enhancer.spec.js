@@ -48,6 +48,16 @@ describe("enhancer.js", () => {
       new_item = enhancer.succeed(item)
       expect(new_item.enhancement).toBe(20)
     })
+
+    test("Returns item with unchanged durability", () => {
+      const item = { name: 'Widget', durability: 35, enhancement: 20 }
+      let new_item = enhancer.succeed(item)
+
+      expect(new_item.durability).toBe(35)
+
+      new_item = enhancer.succeed(item)
+      expect(new_item.durability).toBe(35)
+    })
   })
 
   describe("#fail", () => {
