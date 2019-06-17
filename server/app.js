@@ -33,6 +33,14 @@ app.use(express.json())
  */
 
 app.use('/', require('./routes/root_router'))
+app.use('/items', require('./routes/items_router'))
+
+/**
+ * Error handlers
+ */
+
+app.use(require('./middleware/errors/page_not_found'))
+app.use(require('./middleware/errors/render_error'))
 
 /**
  * Start server
