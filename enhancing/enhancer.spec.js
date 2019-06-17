@@ -75,7 +75,12 @@ describe("enhancer.js", () => {
   })
 
   describe("#fail", () => {
-    test.todo("TODO")
+    test("Returns item with durability minus 5 if enhancement less than 15", () => {
+      const item = { name: 'Widget', durability: 35, enhancement: 5 }
+      let new_item = enhancer.fail(item)
+
+      expect(new_item.durability).toBe(30)
+    })
   })
 
   describe("#repair", () => {

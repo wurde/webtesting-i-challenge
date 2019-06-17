@@ -13,7 +13,11 @@ function succeed(item) {
 }
 
 function fail(item) {
-  return Object.assign({}, item)
+  let new_item = Object.assign({}, item)
+
+  new_item.durability = (new_item.enhancement < 15) ? new_item.durability - 5 : new_item.durability
+
+  return new_item
 }
 
 function repair(item) {
