@@ -17,6 +17,7 @@ function fail(item) {
 
   new_item.durability = (new_item.enhancement < 15) ? new_item.durability - 5 : new_item.durability
   new_item.durability = (new_item.enhancement >= 15) ? new_item.durability - 10 : new_item.durability
+  new_item.enhancement = (new_item.enhancement > 16) ? new_item.enhancement - 1 : new_item.enhancement
 
   return new_item
 }

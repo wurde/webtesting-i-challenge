@@ -88,6 +88,21 @@ describe("enhancer.js", () => {
 
       expect(new_item.durability).toBe(25)
     })
+
+    test("Returns item with decreased enhancement by 1 if greater than 16", () => {
+      const item = { name: 'Widget', durability: 35, enhancement: 20 }
+      let new_item = enhancer.fail(item)
+      expect(new_item.enhancement).toBe(19)
+
+      new_item = enhancer.fail(new_item)
+      expect(new_item.enhancement).toBe(18)
+      new_item = enhancer.fail(new_item)
+      expect(new_item.enhancement).toBe(17)
+      new_item = enhancer.fail(new_item)
+      expect(new_item.enhancement).toBe(16)
+      new_item = enhancer.fail(new_item)
+      expect(new_item.enhancement).toBe(16)
+    })
   })
 
   describe("#repair", () => {
