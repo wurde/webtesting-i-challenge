@@ -11,6 +11,19 @@ const enhancer = require('./enhancer.js')
  */
 
 describe("enhancer.js", () => {
+  test("All methods return a new item", () => {
+    const item = { name: 'Widget', durability: 35, enhancement: 5 }
+    const succeed_item = enhancer.succeed(item)
+    const fail_item = enhancer.fail(item)
+    const repair_item = enhancer.repair(item)
+    const get_item = enhancer.get(item)
+
+    expect(item === succeed_item).toBeFalsy()
+    expect(item === fail_item).toBeFalsy()
+    expect(item === repair_item).toBeFalsy()
+    expect(item === get_item).toBeFalsy()
+  })
+
   describe("#succeed", () => {
     test("Returns item with enhancement incremented by 1", () => {
       const item = { name: 'Widget', durability: 35, enhancement: 5 }
@@ -25,13 +38,6 @@ describe("enhancer.js", () => {
   })
 
   describe("#repair", () => {
-    test("Returns new item", () => {
-      const item = { name: 'Widget', durability: 35, enhancement: 5 }
-      const new_item = enhancer.repair(item)
-
-      expect(item === new_item).toBeFalsy()
-    })
-
     test("Returns item with durability set to 100", () => {
       const item = { name: 'Widget', durability: 35, enhancement: 5 }
       const new_item = enhancer.repair(item)
