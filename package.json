@@ -1,7 +1,7 @@
 {
   "name": "webtesting-i-challenge",
-  "version": "1.0.0",
-  "description": "In this project, you will demonstrate proficiency by writing unit tests and production code to satisfy the _Minimum Viable Product_ described below.",
+  "version": "0.1.0",
+  "description": "Web Testing I Challenge",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/wurde/webtesting-i-challenge.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Andy Bettisworth",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/wurde/webtesting-i-challenge/issues"
